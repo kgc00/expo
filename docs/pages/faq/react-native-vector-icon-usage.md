@@ -6,18 +6,17 @@ title: Using react-native-vector-icons
 
 ## Setup
 
+If you haven't already, install `react-native-vector-icons` to your react-native app. Run the following command at the root folder of your project:
+
+```sh
+npm install --save react-native-vector-icons
+```
+
 ### iOS
 
-We'll be using CocoaPods to install `react-native-vector-icons`. CocoaPods is a dependency manager for Swift and Objective-C, like NPM is for node. Check the [react-native-vector-icons docs](https://github.com/oblador/react-native-vector-icons#installation) for other approaches on setup for iOS.
+We'll be using CocoaPods to install `react-native-vector-icons`. CocoaPods is a dependency manager for Swift and Objective-C, like npm is for Javascript. Check the [react-native-vector-icons docs](https://github.com/oblador/react-native-vector-icons#installation) for other approaches on setup for iOS.
 
-1.) Install `react-native-vector-icons` into your xcode project.
-
-Add the following line to your `./ios/Podfile`:
-
-```ruby
-target 'MyApp' do
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'  # add this line
-```
+1.) Install `react-native-vector-icons` into your Xcode project.
 
 Enter the ios directory and run pod update:
 
@@ -25,9 +24,9 @@ Enter the ios directory and run pod update:
 cd ./ios && npx pod update
 ```
 
-2.) Include icon libraries with your app.
+2.) Include icon sets with your app.
 
-If you'll only be using one, such as FontAwesome, feel free to only add that item. Add the following to the `<dict>` inside your `./ios/<project-name>/info.plist`:
+If you'll only be using one, such as FontAwesome, feel free to only add that item. Add the following to the `<dict>` inside your `./ios/<project-name>/Info.plist`:
 
 ```xml
 <key>UIAppFonts</key>
@@ -53,13 +52,13 @@ If you'll only be using one, such as FontAwesome, feel free to only add that ite
 
 ### Android
 
-Add the following to `android/app/build.gradle` ( NOT android/build.gradle ). Adding this to the end of the file is fine:
+Add the following to `android/app/build.gradle`. It's fine to add this snippet to the end of the file:
 
 ```java
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
-This line tells android studio's `gradle` to include the icon sets you'll be using, similar to step 2 in the iOS setup. If you'd like to only include some icon sets, like FontAwesome and EvilIcons, add this instead:
+This line tells `Gradle` to include the icon sets you'll be using, similar to step 2 in the iOS setup. If you'd like to only include some icon sets, like FontAwesome and EvilIcons, add this instead:
 
 ```java
 project.ext.vectoricons = [
@@ -101,7 +100,7 @@ const App = () => {
 }
 ```
 
-Importing and using and EvilIcon icon:
+Importing and using an EvilIcon icon:
 
 ```js
 import React from 'react';
